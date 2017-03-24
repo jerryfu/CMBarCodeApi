@@ -12,12 +12,8 @@ namespace BarCodeApi.Controllers
     /// <summary>
     /// 取得盤點 全部資料
     /// </summary>
-    public class GetData01Controller : ApiController
+    public class GetData01Controller : BaseApiController
     {
-        private ChaominEntities db = new ChaominEntities();
-        private static Logger logger = LogManager.GetCurrentClassLogger();
-        private const int ExceptionCode = 99;
-
         /// <summary>
         /// 取得盤點 全部資料
         /// </summary>
@@ -79,41 +75,6 @@ namespace BarCodeApi.Controllers
                 return r;
             }
             #endregion
-        }
-
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
-
-        protected string getUserIP()
-        {
-            string VisitorsIPAddr = string.Empty;
-            if (HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] != null)
-            {
-                VisitorsIPAddr = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].ToString();
-            }
-            else if (HttpContext.Current.Request.UserHostAddress.Length != 0)
-            {
-                VisitorsIPAddr = HttpContext.Current.Request.UserHostAddress;
-            }
-            return VisitorsIPAddr;
         }
         /// <summary>
         /// 參詢參數，異動時間空白時回傳所有資料,異動時間有值時回傳該時間點之後異動資料

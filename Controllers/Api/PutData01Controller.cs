@@ -12,12 +12,8 @@ namespace BarCodeApi.Controllers
     /// <summary>
     /// 取得盤點 全部資料
     /// </summary>
-    public class PutData01Controller : ApiController
+    public class PutData01Controller : BaseApiController
     {
-        private ChaominEntities db = new ChaominEntities();
-        private static Logger logger = LogManager.GetCurrentClassLogger();
-        private const int ExceptionCode = 99;
-
         public ReturnInfo Post([FromBody]postParam md)
         {
             ReturnInfo r = new ReturnInfo();
@@ -37,20 +33,6 @@ namespace BarCodeApi.Controllers
                 return r;
             }
         }
-        protected string getUserIP()
-        {
-            string VisitorsIPAddr = string.Empty;
-            if (HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] != null)
-            {
-                VisitorsIPAddr = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].ToString();
-            }
-            else if (HttpContext.Current.Request.UserHostAddress.Length != 0)
-            {
-                VisitorsIPAddr = HttpContext.Current.Request.UserHostAddress;
-            }
-            return VisitorsIPAddr;
-        }
-
         public class postParam
         {
             public IList<PostModal> data { get; set; }

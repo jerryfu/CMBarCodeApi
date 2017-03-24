@@ -23,7 +23,9 @@ namespace BarCodeApi.Controllers
             ReturnInfo r = new ReturnInfo();
             try
             {
-
+                string query_from_ip = getUserIP();
+                var json_query = Newtonsoft.Json.JsonConvert.SerializeObject(md);
+                logger.Info("存放資料，IP:{0}， 參數:{1}。", query_from_ip, json_query);
 
                 r.ReturnCode = 0;
                 return r;

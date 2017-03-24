@@ -71,7 +71,6 @@ namespace BarCodeApi.Controllers
                 r.ReturnCode = 0;
                 r.Data = list;
                 return r;
-
             }
             catch (Exception ex)
             {

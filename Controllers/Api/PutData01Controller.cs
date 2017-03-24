@@ -1,20 +1,23 @@
-﻿using NLog;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web;
+using System.Data.Entity.Core.Objects;
 using System.Web.Http;
 
 namespace BarCodeApi.Controllers
 {
     /// <summary>
-    /// 取得盤點 全部資料
+    /// BarCode回傳
     /// </summary>
     public class PutData01Controller : BaseApiController
     {
-        public ReturnInfo Post([FromBody]postParam md)
+        /// <summary>
+        /// 上傳盤點資料
+        /// </summary>
+        /// <param name="md">陣列資料</param>
+        /// <returns>
+        /// ReturnInfo JSON ReturnCode=> 0:NO Error/1:異常
+        /// </returns>
+        public ReturnInfo Post([FromBody]PostParam md)
         {
             ReturnInfo r = new ReturnInfo();
             try
@@ -23,6 +26,19 @@ namespace BarCodeApi.Controllers
                 var json_query = Newtonsoft.Json.JsonConvert.SerializeObject(md);
                 logger.Info("存放資料，IP:{0}， 參數:{1}。", query_from_ip, json_query);
 
+                foreach (var item in md.data) {
+                    ObjectParameter out_value = new ObjectParameter("returnValue01",typeof(int));
+
+                    var i = db.usp_盤點_資料記錄_PUT(
+                        item.Order_SN_Detail, 
+                        item.Product_SN,
+                        item.Product_Unit,
+                        item.Product_Qty,
+                        item.Product_Qty_New,
+                        out_value);
+                    var json_detail = Newtonsoft.Json.JsonConvert.SerializeObject(item);
+                    logger.Info("儲存JSON:{0} 回傳值:{1}。", json_detail, out_value.Value);
+                }
                 r.ReturnCode = 0;
                 return r;
             }
@@ -33,7 +49,7 @@ namespace BarCodeApi.Controllers
                 return r;
             }
         }
-        public class postParam
+        public class PostParam
         {
             public IList<PostModal> data { get; set; }
         }

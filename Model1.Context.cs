@@ -12,6 +12,8 @@ namespace BarCodeApi
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class ChaominEntities : DbContext
     {
@@ -26,5 +28,30 @@ namespace BarCodeApi
         }
     
         public virtual DbSet<VW_盤點廠商_客戶訂單資料> VW_盤點廠商_客戶訂單資料 { get; set; }
+    
+        public virtual int usp_盤點_資料記錄_PUT(Nullable<int> p01, Nullable<int> p02, string p03, Nullable<float> p04, Nullable<float> p05, ObjectParameter returnValue01)
+        {
+            var p01Parameter = p01.HasValue ?
+                new ObjectParameter("P01", p01) :
+                new ObjectParameter("P01", typeof(int));
+    
+            var p02Parameter = p02.HasValue ?
+                new ObjectParameter("P02", p02) :
+                new ObjectParameter("P02", typeof(int));
+    
+            var p03Parameter = p03 != null ?
+                new ObjectParameter("P03", p03) :
+                new ObjectParameter("P03", typeof(string));
+    
+            var p04Parameter = p04.HasValue ?
+                new ObjectParameter("P04", p04) :
+                new ObjectParameter("P04", typeof(float));
+    
+            var p05Parameter = p05.HasValue ?
+                new ObjectParameter("P05", p05) :
+                new ObjectParameter("P05", typeof(float));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_資料記錄_PUT", p01Parameter, p02Parameter, p03Parameter, p04Parameter, p05Parameter, returnValue01);
+        }
     }
 }

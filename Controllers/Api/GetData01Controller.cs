@@ -1,10 +1,6 @@
-﻿using NLog;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web;
 using System.Web.Http;
 
 namespace BarCodeApi.Controllers
@@ -35,6 +31,9 @@ namespace BarCodeApi.Controllers
 
                 if (q.Key02 != null)
                     items = items.Where(x => x.異動時間 >= q.Key02);
+
+                if (q.Key03 != null)
+                    items = items.Where(x => x.異動類別 == q.Key03);
 
                 var list = items
                     .OrderBy(x => x.異動時間)
@@ -89,6 +88,7 @@ namespace BarCodeApi.Controllers
             /// 異動時間:YYYY-MM-DD HH:MM:SS.000
             /// </summary>
             public DateTime? Key02 { get; set; }
+            public string Key03 { get; set; }
         }
         public class InventoryModal
         {

@@ -1,0 +1,12 @@
+2017-03-24 15:45:18.6143 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[]}
+2017-03-24 15:45:49.6360 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[]}
+2017-03-24 15:46:14.6465 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[]}
+2017-03-24 15:48:26.9740 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":1,"Product_Unit":"そょ","Product_Qty":10,"Product_Qty_New":10},{"Order_SN_Detail":2,"Product_SN":2,"Product_Unit":"そょ","Product_Qty":20,"Product_Qty_New":20}]}
+2017-03-24 15:48:28.6681 BarCodeApi.Controllers.PutData01Controller.Post Info 纗戈 1 ЧΘ!
+2017-03-24 15:48:29.7612 BarCodeApi.Controllers.PutData01Controller.Post Info 纗戈 2 ЧΘ!
+2017-03-24 16:00:31.4735 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":1,"Product_Unit":"そょ","Product_Qty":10,"Product_Qty_New":10},{"Order_SN_Detail":2,"Product_SN":2,"Product_Unit":"そょ","Product_Qty":20,"Product_Qty_New":20}]}
+2017-03-24 16:00:33.1086 BarCodeApi.Controllers.PutData01Controller.Post Info 纗戈 1 ЧΘ!
+2017-03-24 16:11:18.1795 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":1,"Product_Unit":"そょ","Product_Qty":10,"Product_Qty_New":10},{"Order_SN_Detail":2,"Product_SN":2,"Product_Unit":"そょ","Product_Qty":20,"Product_Qty_New":20}]}
+2017-03-24 16:12:03.7521 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":1,"Product_Unit":"そょ","Product_Qty":10,"Product_Qty_New":10},{"Order_SN_Detail":2,"Product_SN":2,"Product_Unit":"そょ","Product_Qty":20,"Product_Qty_New":20}]}
+2017-03-24 16:12:09.1274 BarCodeApi.Controllers.PutData01Controller.Post Info 纗JSON:{"Order_SN_Detail":1,"Product_SN":1,"Product_Unit":"そょ","Product_Qty":10,"Product_Qty_New":10} 肚:5
+2017-03-24 16:12:12.7826 BarCodeApi.Controllers.PutData01Controller.Post Info 纗JSON:{"Order_SN_Detail":2,"Product_SN":2,"Product_Unit":"そょ","Product_Qty":20,"Product_Qty_New":20} 肚:6

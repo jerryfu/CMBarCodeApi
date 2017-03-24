@@ -40,6 +40,14 @@
           <Property Name="異動類別" Type="char" MaxLength="1" />
           <Property Name="異動時間" Type="datetime" />
         </EntityType>
+        <Function Name="usp_盤點_資料記錄_PUT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="P01" Type="int" Mode="In" />
+          <Parameter Name="P02" Type="int" Mode="In" />
+          <Parameter Name="P03" Type="nvarchar" Mode="In" />
+          <Parameter Name="P04" Type="real" Mode="In" />
+          <Parameter Name="P05" Type="real" Mode="In" />
+          <Parameter Name="ReturnValue01" Type="int" Mode="InOut" />
+        </Function>
         <EntityContainer Name="ChaominModelStoreContainer">
           <EntitySet Name="VW_盤點廠商_客戶訂單資料" EntityType="Self.VW_盤點廠商_客戶訂單資料" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -75,6 +83,14 @@
       <Schema Namespace="ChaominModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ChaominEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="VW_盤點廠商_客戶訂單資料" EntityType="ChaominModel.VW_盤點廠商_客戶訂單資料" />
+          <FunctionImport Name="usp_盤點_資料記錄_PUT">
+            <Parameter Name="P01" Mode="In" Type="Int32" />
+            <Parameter Name="P02" Mode="In" Type="Int32" />
+            <Parameter Name="P03" Mode="In" Type="String" />
+            <Parameter Name="P04" Mode="In" Type="Single" />
+            <Parameter Name="P05" Mode="In" Type="Single" />
+            <Parameter Name="ReturnValue01" Mode="InOut" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="VW_盤點廠商_客戶訂單資料">
           <Key>
@@ -144,6 +160,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_盤點_資料記錄_PUT" FunctionName="ChaominModel.Store.usp_盤點_資料記錄_PUT" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

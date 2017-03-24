@@ -143,7 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Api\BaseApiController - 複製.cs" />
+    <Compile Include="Controllers\Api\BaseApiController.cs" />
     <Compile Include="Controllers\Api\PutData01Controller.cs" />
     <Compile Include="Controllers\Api\GetData01Controller.cs" />
     <Compile Include="Global.asax.cs">

@@ -116,8 +116,6 @@ namespace BarCodeApi.Controllers
             }
             return VisitorsIPAddr;
         }
-
-
         /// <summary>
         /// 參詢參數，異動時間空白時回傳所有資料,異動時間有值時回傳該時間點之後異動資料
         /// </summary>

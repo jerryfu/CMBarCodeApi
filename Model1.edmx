@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ChaominModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'Chaomin.dbo.VW_盤點廠商_客戶訂單資料' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="VW_盤點廠商_客戶訂單資料">
+          <Key>
+            <PropertyRef Name="客戶_簡稱" />
+            <PropertyRef Name="產品分類_編號" />
+            <PropertyRef Name="產品分類_名稱" />
+            <PropertyRef Name="產品分類_備註" />
+            <PropertyRef Name="產品分類_排序" />
+            <PropertyRef Name="廠別" />
+          </Key>
+          <Property Name="訂單主檔編號" Type="int" />
+          <Property Name="訂單日期" Type="datetime" />
+          <Property Name="客戶_編號" Type="int" />
+          <Property Name="客戶_名稱" Type="nvarchar" MaxLength="50" />
+          <Property Name="客戶_別名" Type="nvarchar" MaxLength="20" />
+          <Property Name="客戶_簡稱" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="訂單明細編號" Type="int" />
+          <Property Name="產品_編號" Type="int" />
+          <Property Name="產品_名稱" Type="nvarchar" MaxLength="50" />
+          <Property Name="產品_單位" Type="nvarchar" MaxLength="10" />
+          <Property Name="產品_訂購數量" Type="real" />
+          <Property Name="產品_包裝方式" Type="nvarchar" MaxLength="100" />
+          <Property Name="產品_備註說明" Type="nvarchar(max)" />
+          <Property Name="產品分類_編號" Type="int" Nullable="false" />
+          <Property Name="產品分類_名稱" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="產品分類_備註" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="產品分類_排序" Type="float" Nullable="false" />
+          <Property Name="客戶區域_編號" Type="int" />
+          <Property Name="客戶區域_名稱" Type="nvarchar" MaxLength="10" />
+          <Property Name="客戶區域_排序" Type="float" />
+          <Property Name="廠別" Type="int" Nullable="false" />
+          <Property Name="異動類別" Type="char" MaxLength="1" />
+          <Property Name="異動時間" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="ChaominModelStoreContainer">
+          <EntitySet Name="VW_盤點廠商_客戶訂單資料" EntityType="Self.VW_盤點廠商_客戶訂單資料" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VW_盤點廠商_客戶訂單資料].[訂單主檔編號] AS [訂單主檔編號], 
+    [VW_盤點廠商_客戶訂單資料].[訂單日期] AS [訂單日期], 
+    [VW_盤點廠商_客戶訂單資料].[客戶_編號] AS [客戶_編號], 
+    [VW_盤點廠商_客戶訂單資料].[客戶_名稱] AS [客戶_名稱], 
+    [VW_盤點廠商_客戶訂單資料].[客戶_別名] AS [客戶_別名], 
+    [VW_盤點廠商_客戶訂單資料].[客戶_簡稱] AS [客戶_簡稱], 
+    [VW_盤點廠商_客戶訂單資料].[訂單明細編號] AS [訂單明細編號], 
+    [VW_盤點廠商_客戶訂單資料].[產品_編號] AS [產品_編號], 
+    [VW_盤點廠商_客戶訂單資料].[產品_名稱] AS [產品_名稱], 
+    [VW_盤點廠商_客戶訂單資料].[產品_單位] AS [產品_單位], 
+    [VW_盤點廠商_客戶訂單資料].[產品_訂購數量] AS [產品_訂購數量], 
+    [VW_盤點廠商_客戶訂單資料].[產品_包裝方式] AS [產品_包裝方式], 
+    [VW_盤點廠商_客戶訂單資料].[產品_備註說明] AS [產品_備註說明], 
+    [VW_盤點廠商_客戶訂單資料].[產品分類_編號] AS [產品分類_編號], 
+    [VW_盤點廠商_客戶訂單資料].[產品分類_名稱] AS [產品分類_名稱], 
+    [VW_盤點廠商_客戶訂單資料].[產品分類_備註] AS [產品分類_備註], 
+    [VW_盤點廠商_客戶訂單資料].[產品分類_排序] AS [產品分類_排序], 
+    [VW_盤點廠商_客戶訂單資料].[客戶區域_編號] AS [客戶區域_編號], 
+    [VW_盤點廠商_客戶訂單資料].[客戶區域_名稱] AS [客戶區域_名稱], 
+    [VW_盤點廠商_客戶訂單資料].[客戶區域_排序] AS [客戶區域_排序], 
+    [VW_盤點廠商_客戶訂單資料].[廠別] AS [廠別], 
+    [VW_盤點廠商_客戶訂單資料].[異動類別] AS [異動類別], 
+    [VW_盤點廠商_客戶訂單資料].[異動時間] AS [異動時間]
+    FROM [dbo].[VW_盤點廠商_客戶訂單資料] AS [VW_盤點廠商_客戶訂單資料]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChaominModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ChaominEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="VW_盤點廠商_客戶訂單資料" EntityType="ChaominModel.VW_盤點廠商_客戶訂單資料" />
+        </EntityContainer>
+        <EntityType Name="VW_盤點廠商_客戶訂單資料">
+          <Key>
+            <PropertyRef Name="客戶_簡稱" />
+            <PropertyRef Name="產品分類_編號" />
+            <PropertyRef Name="產品分類_名稱" />
+            <PropertyRef Name="產品分類_備註" />
+            <PropertyRef Name="產品分類_排序" />
+            <PropertyRef Name="廠別" />
+          </Key>
+          <Property Name="訂單主檔編號" Type="Int32" />
+          <Property Name="訂單日期" Type="DateTime" Precision="3" />
+          <Property Name="客戶_編號" Type="Int32" />
+          <Property Name="客戶_名稱" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="客戶_別名" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="客戶_簡稱" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="訂單明細編號" Type="Int32" />
+          <Property Name="產品_編號" Type="Int32" />
+          <Property Name="產品_名稱" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="產品_單位" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="產品_訂購數量" Type="Single" />
+          <Property Name="產品_包裝方式" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="產品_備註說明" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="產品分類_編號" Type="Int32" Nullable="false" />
+          <Property Name="產品分類_名稱" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="產品分類_備註" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="產品分類_排序" Type="Double" Nullable="false" />
+          <Property Name="客戶區域_編號" Type="Int32" />
+          <Property Name="客戶區域_名稱" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="客戶區域_排序" Type="Double" />
+          <Property Name="廠別" Type="Int32" Nullable="false" />
+          <Property Name="異動類別" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="異動時間" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChaominModelStoreContainer" CdmEntityContainer="ChaominEntities">
+          <EntitySetMapping Name="VW_盤點廠商_客戶訂單資料">
+            <EntityTypeMapping TypeName="ChaominModel.VW_盤點廠商_客戶訂單資料">
+              <MappingFragment StoreEntitySet="VW_盤點廠商_客戶訂單資料">
+                <ScalarProperty Name="異動時間" ColumnName="異動時間" />
+                <ScalarProperty Name="異動類別" ColumnName="異動類別" />
+                <ScalarProperty Name="廠別" ColumnName="廠別" />
+                <ScalarProperty Name="客戶區域_排序" ColumnName="客戶區域_排序" />
+                <ScalarProperty Name="客戶區域_名稱" ColumnName="客戶區域_名稱" />
+                <ScalarProperty Name="客戶區域_編號" ColumnName="客戶區域_編號" />
+                <ScalarProperty Name="產品分類_排序" ColumnName="產品分類_排序" />
+                <ScalarProperty Name="產品分類_備註" ColumnName="產品分類_備註" />
+                <ScalarProperty Name="產品分類_名稱" ColumnName="產品分類_名稱" />
+                <ScalarProperty Name="產品分類_編號" ColumnName="產品分類_編號" />
+                <ScalarProperty Name="產品_備註說明" ColumnName="產品_備註說明" />
+                <ScalarProperty Name="產品_包裝方式" ColumnName="產品_包裝方式" />
+                <ScalarProperty Name="產品_訂購數量" ColumnName="產品_訂購數量" />
+                <ScalarProperty Name="產品_單位" ColumnName="產品_單位" />
+                <ScalarProperty Name="產品_名稱" ColumnName="產品_名稱" />
+                <ScalarProperty Name="產品_編號" ColumnName="產品_編號" />
+                <ScalarProperty Name="訂單明細編號" ColumnName="訂單明細編號" />
+                <ScalarProperty Name="客戶_簡稱" ColumnName="客戶_簡稱" />
+                <ScalarProperty Name="客戶_別名" ColumnName="客戶_別名" />
+                <ScalarProperty Name="客戶_名稱" ColumnName="客戶_名稱" />
+                <ScalarProperty Name="客戶_編號" ColumnName="客戶_編號" />
+                <ScalarProperty Name="訂單日期" ColumnName="訂單日期" />
+                <ScalarProperty Name="訂單主檔編號" ColumnName="訂單主檔編號" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

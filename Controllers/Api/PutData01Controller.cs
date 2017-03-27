@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.Core.Objects;
 using System.Web.Http;
 
@@ -39,6 +40,7 @@ namespace BarCodeApi.Controllers
                     var json_detail = Newtonsoft.Json.JsonConvert.SerializeObject(item);
                     logger.Info("儲存JSON:{0} 回傳值:{1}。", json_detail, out_value.Value);
                 }
+                r.Count = md.data.Count;
                 r.ReturnCode = 0;
                 return r;
             }
@@ -51,19 +53,26 @@ namespace BarCodeApi.Controllers
         }
         public class PostParam
         {
+            [Required]
             public IList<PostModal> data { get; set; }
         }
         public class PostModal
         {
+            //[Required]
             public int Order_SN_Detail { get; set; }
+            //[Required]
             public int Product_SN { get; set; }
+            //[Required]
             public string Product_Unit { get; set; }
+            //[Required]
             public int Product_Qty { get; set; }
+            //[Required]
             public int Product_Qty_New { get; set; }
         }
         public class ReturnInfo
         {
             public int ReturnCode { get; set; }
+            public int Count { get; set; }
         }
     }
 }

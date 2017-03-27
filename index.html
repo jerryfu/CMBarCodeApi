@@ -5,36 +5,33 @@
     <title></title>
 </head>
 <body>
-    <button id="btnSendData">Click</button>
+    <label>Test Getdata01</label><br />
+    <input type="text" id="Key01" />
+    <input type="text" id="Key02" />
+    <input type="text" id="Key03" />
+    <button id="btnGetData01">Click GetData01</button><br />
+    <textarea id="GetResult"></textarea><br />
+
+
+    <button id="btnPutData01">Click PutData01</button>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
     <script>
-        $('#btnSendData').click(function () {
 
+        $('#btnGetData01').click(function () {
             var obj = {
-                data: [
-                    {
-                        Order_SN_Detail: 1,
-                        Product_SN: 1,
-                        Product_Unit: '公斤',
-                        Product_Qty: 10,
-                        Product_Qty_New:10
-                    },
-                    {
-                        Order_SN_Detail: 2,
-                        Product_SN: 2,
-                        Product_Unit: '公斤',
-                        Product_Qty: 20,
-                        Product_Qty_New: 20
-                    }
-                ]
+                Key01: $('#Key01').val(),
+                Key02: $('#Key02').val(),
+                Key03: $('#Key03').val()
             }
 
-            $.post("./api/PutData01",obj, function (data) {
-                alert(data.ReturnCode)
+            $.get("./api/GetData01", obj, function (data) {
+                console.log(data.ReturnCode)
+                $('#GetResult').val(JSON.stringify(data.Data)) //data.Data;
             });
         })
+
     </script>
 </body>
 </html>

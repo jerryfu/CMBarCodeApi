@@ -26,8 +26,14 @@ namespace BarCodeApi.Controllers
             try
             {
                 var items = db.VW_盤點廠商_客戶訂單資料.AsQueryable();
-                if (q.Key01 != null)
-                    items = items.Where(x => x.訂單日期 == q.Key01);
+                if (q.Key01 != null) {
+                    var qK01 = (DateTime)q.Key01;
+                    var y = qK01.Year;
+                    var m = qK01.Month;
+                    var d = qK01.Day;
+
+                    items = items.Where(x => x.訂單日期.Value.Year== y && x.訂單日期.Value.Month==m && x.訂單日期.Value.Day==d);
+                }
 
                 if (q.Key02 != null)
                     items = items.Where(x => x.異動時間 >= q.Key02);

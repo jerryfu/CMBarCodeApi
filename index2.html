@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <label>Test Putdata01</label><br />
+    Order_SN_Detail:<input type="text" id="Order_SN_Detail" /><br />
+    Product_SN: <input type="text" id="Product_SN" /><br />
+    Product_Unit<input type="text" id="Product_Unit" /><br />
+    Product_Qty<input type="text" id="Product_Qty" /><br />
+    Product_Qty_New<input type="text" id="Product_Qty_New" /><br />
+
+    <button id="btnPutData01">Click PutData01</button>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script>
+        $('#btnPutData01').click(function () {
+
+            var _data = [];
+
+            var get_data = {
+                Order_SN_Detail: parseInt($('#Order_SN_Detail').val(),10),
+                Product_SN: $('#Product_SN').val(),
+                Product_Unit: $('#Product_Unit').val(),
+                Product_Qty: $('#Product_Qty').val(),
+                Product_Qty_New: $('#Product_Qty_New').val()
+            }
+            _data.push(get_data)
+
+            var obj = {
+                data: _data
+            }
+
+            $.post("./api/PutData01",obj, function (data) {
+                alert(data.ReturnCode)
+            });
+        })
+    </script>
+</body>
+</html>

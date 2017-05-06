@@ -14,13 +14,13 @@ namespace BarCodeApi
     
     public partial class VW_盤點廠商_客戶訂單資料
     {
-        public Nullable<int> 訂單主檔編號 { get; set; }
+        public int 訂單主檔編號 { get; set; }
         public Nullable<System.DateTime> 訂單日期 { get; set; }
         public Nullable<int> 客戶_編號 { get; set; }
         public string 客戶_名稱 { get; set; }
         public string 客戶_別名 { get; set; }
         public string 客戶_簡稱 { get; set; }
-        public Nullable<int> 訂單明細編號 { get; set; }
+        public int 訂單明細編號 { get; set; }
         public Nullable<int> 產品_編號 { get; set; }
         public string 產品_名稱 { get; set; }
         public string 產品_單位 { get; set; }

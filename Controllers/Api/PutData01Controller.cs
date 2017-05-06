@@ -65,9 +65,9 @@ namespace BarCodeApi.Controllers
             //[Required]
             public string Product_Unit { get; set; }
             //[Required]
-            public int Product_Qty { get; set; }
+            public float Product_Qty { get; set; }
             //[Required]
-            public int Product_Qty_New { get; set; }
+            public float Product_Qty_New { get; set; }
         }
         public class ReturnInfo
         {

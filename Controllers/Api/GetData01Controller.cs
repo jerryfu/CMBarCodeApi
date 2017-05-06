@@ -26,17 +26,18 @@ namespace BarCodeApi.Controllers
             try
             {
                 var items = db.VW_盤點廠商_客戶訂單資料.AsQueryable();
-                if (q.Key01 != null) {
+                if (q.Key01 != null)
+                {
                     var qK01 = (DateTime)q.Key01;
                     var y = qK01.Year;
                     var m = qK01.Month;
                     var d = qK01.Day;
 
-                    items = items.Where(x => x.訂單日期.Value.Year== y && x.訂單日期.Value.Month==m && x.訂單日期.Value.Day==d);
+                    items = items.Where(x => x.訂單日期.Value.Year == y && x.訂單日期.Value.Month == m && x.訂單日期.Value.Day == d);
                 }
 
                 if (q.Key02 != null)
-                    items = items.Where(x => x.異動時間 >= q.Key02);
+                    items = items.Where(x => x.異動時間 > q.Key02);
 
                 if (q.Key03 != null)
                     items = items.Where(x => x.異動類別 == q.Key03);
@@ -47,7 +48,7 @@ namespace BarCodeApi.Controllers
                     {
                         Order_SN_Master = (int)x.訂單主檔編號,
                         Order_Date = (DateTime)x.訂單日期,
-                        Customer_SN = (int)x.客戶_編號,
+                        Customer_SN = x.客戶_編號,
                         Customer_Name1 = x.客戶_名稱,
                         Customer_Name2 = x.客戶_別名,
                         Customer_Name3 = x.客戶_簡稱,
@@ -100,7 +101,7 @@ namespace BarCodeApi.Controllers
         {
             public int Order_SN_Master { get; set; }
             public DateTime Order_Date { get; set; }
-            public int Customer_SN { get; set; }
+            public int? Customer_SN { get; set; }
             public string Customer_Name1 { get; set; }
             public string Customer_Name2 { get; set; }
             public string Customer_Name3 { get; set; }

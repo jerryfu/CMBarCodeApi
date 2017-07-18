@@ -148,6 +148,10 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\BaseApiController.cs" />
+    <Compile Include="Controllers\Api\GetData14Controller.cs" />
+    <Compile Include="Controllers\Api\GetData13Controller.cs" />
+    <Compile Include="Controllers\Api\GetData12Controller.cs" />
+    <Compile Include="Controllers\Api\GetData11Controller.cs" />
     <Compile Include="Controllers\Api\PutData01Controller.cs" />
     <Compile Include="Controllers\Api\GetData01Controller.cs" />
     <Compile Include="Global.asax.cs">

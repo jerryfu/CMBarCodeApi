@@ -11,7 +11,7 @@ namespace BarCodeApi.Controllers
     /// </summary>
     public class GetData14Controller : BaseApiController
     {
-        public ReturnInfo Get([FromBody]GetParam md)
+        public ReturnInfo Get([FromUri]GetParam md)
         {
             ReturnInfo r = new ReturnInfo();
             try

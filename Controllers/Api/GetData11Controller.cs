@@ -43,13 +43,16 @@ namespace BarCodeApi.Controllers
                 {
                     PackData pd = new PackData();
                     pd.Order_SN_Master = (int)reader["訂單主檔編號"];
-                    pd.Order_Date = (DateTime)reader["Product_Name"];
-                    pd.Customer_Name1 = reader["Product_Price"].ToString();
-                    pd.Customer_Name2 = reader["Product_Unit"].ToString();
-                    pd.Customer_Name3 = reader["Product_Remark"].ToString();
+                    //pd.Order_Date = (DateTime)reader["Product_Name"];
+                    pd.Customer_SN = (int)reader["客戶_編號"];
+                    pd.Customer_Name1 = reader["客戶_名稱"].ToString();
+                    pd.Customer_Name2 = reader["客戶_別名"].ToString();
+                    pd.Customer_Name3 = reader["客戶_簡稱"].ToString();
                     pd.DataCount = (int)reader["資料筆數"];
+                    packData.Add(pd);
                 }
 
+                r.Data = packData;
                 r.ReturnCode = 0;
                 return r;
             }

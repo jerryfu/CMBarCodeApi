@@ -1,0 +1,22 @@
+2017-07-18 20:41:03.0639 BarCodeApi.Controllers.GetData11Controller.Get Error 儲存資料錯誤 System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCodeApi.Controllers.GetData11Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData11Controller.cs: 行 32
+2017-07-18 20:41:50.6165 BarCodeApi.Controllers.GetData11Controller.Get Error 儲存資料錯誤 System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCodeApi.Controllers.GetData11Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData11Controller.cs: 行 32
+2017-07-18 20:42:21.2003 BarCodeApi.Controllers.GetData11Controller.Get Error 儲存資料錯誤 System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCodeApi.Controllers.GetData11Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData11Controller.cs: 行 32
+2017-07-18 20:43:52.1988 BarCodeApi.Controllers.GetData11Controller.Get Error 儲存資料錯誤 System.Data.SqlClient.SqlException (0x80131904): 程序或函數 'usp_盤點_取得資料11' 必須有參數 '@P03'，但是並未提供。
+   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   於 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   於 System.Data.SqlClient.SqlCommand.ExecuteReader()
+   於 BarCodeApi.Controllers.GetData11Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData11Controller.cs: 行 38
+ClientConnectionId:95e84132-4505-476f-98c1-55979c577563
+Error Number:201,State:4,Class:16

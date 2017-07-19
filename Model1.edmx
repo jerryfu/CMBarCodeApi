@@ -4,44 +4,33 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ChaominModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'ChaominTest.dbo.VW_盤點廠商_客戶訂單資料' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
-        <EntityType Name="VW_盤點廠商_客戶訂單資料">
-          <Key>
-            
-            <PropertyRef Name="客戶_簡稱" />
-            
-            <PropertyRef Name="產品分類_編號" />
-            <PropertyRef Name="產品分類_名稱" />
-            <PropertyRef Name="產品分類_備註" />
-            <PropertyRef Name="產品分類_排序" />
-            <PropertyRef Name="廠別" />
-          </Key>
-          <Property Name="訂單主檔編號" Type="int" Nullable="false" />
-          <Property Name="訂單日期" Type="datetime" />
-          <Property Name="客戶_編號" Type="int" />
-          <Property Name="客戶_名稱" Type="nvarchar" MaxLength="50" />
-          <Property Name="客戶_別名" Type="nvarchar" MaxLength="20" />
-          <Property Name="客戶_簡稱" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="訂單明細編號" Type="int" Nullable="false" />
-          <Property Name="產品_編號" Type="int" />
-          <Property Name="產品_名稱" Type="nvarchar" MaxLength="50" />
-          <Property Name="產品_單位" Type="nvarchar" MaxLength="10" />
-          <Property Name="產品_訂購數量" Type="real" />
-          <Property Name="產品_包裝方式" Type="nvarchar" MaxLength="100" />
-          <Property Name="產品_備註說明" Type="nvarchar(max)" />
-          <Property Name="產品分類_編號" Type="int" Nullable="false" />
-          <Property Name="產品分類_名稱" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="產品分類_備註" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="產品分類_排序" Type="float" Nullable="false" />
-          <Property Name="客戶區域_編號" Type="int" />
-          <Property Name="客戶區域_名稱" Type="nvarchar" MaxLength="10" />
-          <Property Name="客戶區域_排序" Type="float" />
-          <Property Name="廠別" Type="int" Nullable="false" />
-          <Property Name="異動類別" Type="char" MaxLength="1" />
-          <Property Name="異動時間" Type="datetime" />
-        </EntityType>
+    <Schema Namespace="ChaominModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="usp_盤點_取得資料11" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="P01" Type="int" Mode="In" />
+          <Parameter Name="P02" Type="datetime" Mode="In" />
+          <Parameter Name="P03" Type="int" Mode="In" />
+          <Parameter Name="P04" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_盤點_取得資料12" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="P01" Type="int" Mode="In" />
+          <Parameter Name="P02" Type="datetime" Mode="In" />
+          <Parameter Name="P03" Type="int" Mode="In" />
+          <Parameter Name="P04" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_盤點_取得資料13" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="P01" Type="int" Mode="In" />
+          <Parameter Name="P02" Type="datetime" Mode="In" />
+          <Parameter Name="P03" Type="nvarchar" Mode="In" />
+          <Parameter Name="P04" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_盤點_取得資料14" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="P01" Type="int" Mode="In" />
+          <Parameter Name="P02" Type="datetime" Mode="In" />
+          <Parameter Name="P03" Type="int" Mode="In" />
+          <Parameter Name="P04" Type="int" Mode="In" />
+          <Parameter Name="P05" Type="int" Mode="In" />
+          <Parameter Name="P06" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="usp_盤點_資料記錄_PUT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="P01" Type="int" Mode="In" />
           <Parameter Name="P02" Type="int" Mode="In" />
@@ -50,35 +39,7 @@
           <Parameter Name="P05" Type="real" Mode="In" />
           <Parameter Name="ReturnValue01" Type="int" Mode="InOut" />
         </Function>
-        <EntityContainer Name="ChaominModelStoreContainer">
-          <EntitySet Name="VW_盤點廠商_客戶訂單資料" EntityType="Self.VW_盤點廠商_客戶訂單資料" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [VW_盤點廠商_客戶訂單資料].[訂單主檔編號] AS [訂單主檔編號], 
-    [VW_盤點廠商_客戶訂單資料].[訂單日期] AS [訂單日期], 
-    [VW_盤點廠商_客戶訂單資料].[客戶_編號] AS [客戶_編號], 
-    [VW_盤點廠商_客戶訂單資料].[客戶_名稱] AS [客戶_名稱], 
-    [VW_盤點廠商_客戶訂單資料].[客戶_別名] AS [客戶_別名], 
-    [VW_盤點廠商_客戶訂單資料].[客戶_簡稱] AS [客戶_簡稱], 
-    [VW_盤點廠商_客戶訂單資料].[訂單明細編號] AS [訂單明細編號], 
-    [VW_盤點廠商_客戶訂單資料].[產品_編號] AS [產品_編號], 
-    [VW_盤點廠商_客戶訂單資料].[產品_名稱] AS [產品_名稱], 
-    [VW_盤點廠商_客戶訂單資料].[產品_單位] AS [產品_單位], 
-    [VW_盤點廠商_客戶訂單資料].[產品_訂購數量] AS [產品_訂購數量], 
-    [VW_盤點廠商_客戶訂單資料].[產品_包裝方式] AS [產品_包裝方式], 
-    [VW_盤點廠商_客戶訂單資料].[產品_備註說明] AS [產品_備註說明], 
-    [VW_盤點廠商_客戶訂單資料].[產品分類_編號] AS [產品分類_編號], 
-    [VW_盤點廠商_客戶訂單資料].[產品分類_名稱] AS [產品分類_名稱], 
-    [VW_盤點廠商_客戶訂單資料].[產品分類_備註] AS [產品分類_備註], 
-    [VW_盤點廠商_客戶訂單資料].[產品分類_排序] AS [產品分類_排序], 
-    [VW_盤點廠商_客戶訂單資料].[客戶區域_編號] AS [客戶區域_編號], 
-    [VW_盤點廠商_客戶訂單資料].[客戶區域_名稱] AS [客戶區域_名稱], 
-    [VW_盤點廠商_客戶訂單資料].[客戶區域_排序] AS [客戶區域_排序], 
-    [VW_盤點廠商_客戶訂單資料].[廠別] AS [廠別], 
-    [VW_盤點廠商_客戶訂單資料].[異動類別] AS [異動類別], 
-    [VW_盤點廠商_客戶訂單資料].[異動時間] AS [異動時間]
-    FROM [dbo].[VW_盤點廠商_客戶訂單資料] AS [VW_盤點廠商_客戶訂單資料]</DefiningQuery>
-          </EntitySet>
-        </EntityContainer>
+        <EntityContainer Name="ChaominModelStoreContainer" />
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -92,6 +53,32 @@
             <Parameter Name="P04" Mode="In" Type="Single" />
             <Parameter Name="P05" Mode="In" Type="Single" />
             <Parameter Name="ReturnValue01" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_盤點_取得資料11">
+            <Parameter Name="P01" Mode="In" Type="Int32" />
+            <Parameter Name="P02" Mode="In" Type="DateTime" />
+            <Parameter Name="P03" Mode="In" Type="Int32" />
+            <Parameter Name="P04" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_盤點_取得資料12">
+            <Parameter Name="P01" Mode="In" Type="Int32" />
+            <Parameter Name="P02" Mode="In" Type="DateTime" />
+            <Parameter Name="P03" Mode="In" Type="Int32" />
+            <Parameter Name="P04" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_盤點_取得資料13">
+            <Parameter Name="P01" Mode="In" Type="Int32" />
+            <Parameter Name="P02" Mode="In" Type="DateTime" />
+            <Parameter Name="P03" Mode="In" Type="String" />
+            <Parameter Name="P04" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_盤點_取得資料14">
+            <Parameter Name="P01" Mode="In" Type="Int32" />
+            <Parameter Name="P02" Mode="In" Type="DateTime" />
+            <Parameter Name="P03" Mode="In" Type="Int32" />
+            <Parameter Name="P04" Mode="In" Type="Int32" />
+            <Parameter Name="P05" Mode="In" Type="Int32" />
+            <Parameter Name="P06" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="VW_盤點廠商_客戶訂單資料">
@@ -133,36 +120,11 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ChaominModelStoreContainer" CdmEntityContainer="ChaominEntities">
-          <EntitySetMapping Name="VW_盤點廠商_客戶訂單資料">
-            <EntityTypeMapping TypeName="ChaominModel.VW_盤點廠商_客戶訂單資料">
-              <MappingFragment StoreEntitySet="VW_盤點廠商_客戶訂單資料">
-                <ScalarProperty Name="異動時間" ColumnName="異動時間" />
-                <ScalarProperty Name="異動類別" ColumnName="異動類別" />
-                <ScalarProperty Name="廠別" ColumnName="廠別" />
-                <ScalarProperty Name="客戶區域_排序" ColumnName="客戶區域_排序" />
-                <ScalarProperty Name="客戶區域_名稱" ColumnName="客戶區域_名稱" />
-                <ScalarProperty Name="客戶區域_編號" ColumnName="客戶區域_編號" />
-                <ScalarProperty Name="產品分類_排序" ColumnName="產品分類_排序" />
-                <ScalarProperty Name="產品分類_備註" ColumnName="產品分類_備註" />
-                <ScalarProperty Name="產品分類_名稱" ColumnName="產品分類_名稱" />
-                <ScalarProperty Name="產品分類_編號" ColumnName="產品分類_編號" />
-                <ScalarProperty Name="產品_備註說明" ColumnName="產品_備註說明" />
-                <ScalarProperty Name="產品_包裝方式" ColumnName="產品_包裝方式" />
-                <ScalarProperty Name="產品_訂購數量" ColumnName="產品_訂購數量" />
-                <ScalarProperty Name="產品_單位" ColumnName="產品_單位" />
-                <ScalarProperty Name="產品_名稱" ColumnName="產品_名稱" />
-                <ScalarProperty Name="產品_編號" ColumnName="產品_編號" />
-                <ScalarProperty Name="訂單明細編號" ColumnName="訂單明細編號" />
-                <ScalarProperty Name="客戶_簡稱" ColumnName="客戶_簡稱" />
-                <ScalarProperty Name="客戶_別名" ColumnName="客戶_別名" />
-                <ScalarProperty Name="客戶_名稱" ColumnName="客戶_名稱" />
-                <ScalarProperty Name="客戶_編號" ColumnName="客戶_編號" />
-                <ScalarProperty Name="訂單日期" ColumnName="訂單日期" />
-                <ScalarProperty Name="訂單主檔編號" ColumnName="訂單主檔編號" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="usp_盤點_資料記錄_PUT" FunctionName="ChaominModel.Store.usp_盤點_資料記錄_PUT" />
+          <FunctionImportMapping FunctionImportName="usp_盤點_取得資料11" FunctionName="ChaominModel.Store.usp_盤點_取得資料11" />
+          <FunctionImportMapping FunctionImportName="usp_盤點_取得資料12" FunctionName="ChaominModel.Store.usp_盤點_取得資料12" />
+          <FunctionImportMapping FunctionImportName="usp_盤點_取得資料13" FunctionName="ChaominModel.Store.usp_盤點_取得資料13" />
+          <FunctionImportMapping FunctionImportName="usp_盤點_取得資料14" FunctionName="ChaominModel.Store.usp_盤點_取得資料14" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

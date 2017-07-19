@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Data.Entity.Core.Objects;
+using System.Data.SqlClient;
 using System.Web.Http;
 
 namespace BarCodeApi.Controllers
@@ -12,7 +14,7 @@ namespace BarCodeApi.Controllers
     public class GetData11Controller : BaseApiController
     {
 
-        public ReturnInfo Get([FromBody]GetParam md)
+        public ReturnInfo Get([FromUri]GetParam md)
         {
             ReturnInfo r = new ReturnInfo();
             try
@@ -20,6 +22,33 @@ namespace BarCodeApi.Controllers
                 string query_from_ip = getUserIP();
                 var json_query = Newtonsoft.Json.JsonConvert.SerializeObject(md);
                 logger.Info("存放資料，IP:{0}， 參數:{1}。", query_from_ip, json_query);
+
+
+                db = new ChaominEntities();
+                var conn = db.Database.Connection as SqlConnection;
+                SqlCommand cmd = new SqlCommand("usp_盤點_取得資料11", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@P01", md.Key01));
+                cmd.Parameters.Add(new SqlParameter("@P02", md.Key02));
+                cmd.Parameters.Add(new SqlParameter("@P03", md.Key03));
+                cmd.Parameters.Add(new SqlParameter("@P04", md.Key04));
+
+                conn.Open();
+                var reader = cmd.ExecuteReader();
+
+                IList<PackData> packData = new List<PackData>();
+
+                while (reader.Read())
+                {
+                    PackData pd = new PackData();
+                    pd.Order_SN_Master = (int)reader["訂單主檔編號"];
+                    pd.Order_Date = (DateTime)reader["Product_Name"];
+                    pd.Customer_Name1 = reader["Product_Price"].ToString();
+                    pd.Customer_Name2 = reader["Product_Unit"].ToString();
+                    pd.Customer_Name3 = reader["Product_Remark"].ToString();
+                    pd.DataCount = (int)reader["資料筆數"];
+                }
 
                 r.ReturnCode = 0;
                 return r;
@@ -38,12 +67,12 @@ namespace BarCodeApi.Controllers
             /// <summary>
             /// 客戶_編號
             /// </summary>
-            public int? Key03 { get; set; }
+            public int Key03 { get; set; }
 
             /// <summary>
             /// 產品_編號
             /// </summary>
-            public int? Key04 { get; set; }
+            public int Key04 { get; set; }
 
         }
 

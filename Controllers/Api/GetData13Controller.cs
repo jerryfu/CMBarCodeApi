@@ -24,13 +24,19 @@ namespace BarCodeApi.Controllers
 
                 db = new ChaominEntities();
                 var conn = db.Database.Connection as SqlConnection;
-                SqlCommand cmd = new SqlCommand("usp_盤點_取得資料12", conn);
+                SqlCommand cmd = new SqlCommand("usp_盤點_取得資料13", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add(new SqlParameter("@P01", md.Key01));
-                cmd.Parameters.Add(new SqlParameter("@P02", md.Key02));
-                cmd.Parameters.Add(new SqlParameter("@P03", md.Key03));
-                cmd.Parameters.Add(new SqlParameter("@P04", md.Key04));
+                var Key01 = md.Key01;
+                var Key02 = md.Key02;
+                var Key03 = md.Key03 ?? "";
+                var Key04 = md.Key04;
+
+
+                cmd.Parameters.Add(new SqlParameter("@P01", Key01));
+                cmd.Parameters.Add(new SqlParameter("@P02", Key02));
+                cmd.Parameters.Add(new SqlParameter("@P03", Key03));
+                cmd.Parameters.Add(new SqlParameter("@P04", Key04));
 
                 conn.Open();
                 var reader = cmd.ExecuteReader();
@@ -40,6 +46,8 @@ namespace BarCodeApi.Controllers
                 while (reader.Read())
                 {
                     PackData pd = new PackData();
+                    var date = reader["訂單日期"];
+
                     pd.Order_Date = (DateTime)reader["訂單日期"];
                     pd.ProductCat_SN = (int)reader["產品分類_編號"];
                     pd.ProductCat_Name = reader["產品分類_名稱"].ToString();

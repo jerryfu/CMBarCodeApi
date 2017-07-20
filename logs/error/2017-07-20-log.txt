@@ -1,0 +1,59 @@
+2017-07-20 09:06:03.4616 BarCodeApi.Controllers.GetData13Controller.Get Error 儲存資料錯誤 System.Data.SqlClient.SqlException (0x80131904): 程序或函數 'usp_盤點_取得資料12' 必須有參數 '@P03'，但是並未提供。
+   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   於 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   於 System.Data.SqlClient.SqlCommand.ExecuteReader()
+   於 BarCodeApi.Controllers.GetData13Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData13Controller.cs: 行 36
+ClientConnectionId:a14b49bb-bd0e-4b21-ae30-a902d0a99e14
+Error Number:201,State:4,Class:16
+2017-07-20 09:13:09.4537 BarCodeApi.Controllers.GetData13Controller.Get Error 儲存資料錯誤 System.Data.SqlClient.SqlException (0x80131904): 程序或函數 'usp_盤點_取得資料12' 必須有參數 '@P03'，但是並未提供。
+   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   於 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   於 System.Data.SqlClient.SqlCommand.ExecuteReader()
+   於 BarCodeApi.Controllers.GetData13Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData13Controller.cs: 行 36
+ClientConnectionId:22a56eca-5847-4b0f-949b-efb2f38601a0
+Error Number:201,State:4,Class:16
+2017-07-20 09:24:51.5383 BarCodeApi.Controllers.GetData13Controller.Get Error 儲存資料錯誤 System.IndexOutOfRangeException: 訂單日期
+   於 System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   於 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   於 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   於 BarCodeApi.Controllers.GetData13Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData13Controller.cs: 行 49
+2017-07-20 09:27:35.2472 BarCodeApi.Controllers.GetData13Controller.Get Error 儲存資料錯誤 System.IndexOutOfRangeException: 訂單日期
+   於 System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   於 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   於 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   於 BarCodeApi.Controllers.GetData13Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData13Controller.cs: 行 49
+2017-07-20 09:28:02.6041 BarCodeApi.Controllers.GetData13Controller.Get Error 儲存資料錯誤 System.IndexOutOfRangeException: 訂單日期
+   於 System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   於 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   於 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   於 BarCodeApi.Controllers.GetData13Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData13Controller.cs: 行 49
+2017-07-20 09:29:46.4832 BarCodeApi.Controllers.GetData13Controller.Get Error 儲存資料錯誤 System.IndexOutOfRangeException: 訂單日期
+   於 System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   於 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   於 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   於 BarCodeApi.Controllers.GetData13Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData13Controller.cs: 行 49
+2017-07-20 09:32:13.6617 BarCodeApi.Controllers.GetData13Controller.Get Error 儲存資料錯誤 System.IndexOutOfRangeException: 訂單日期
+   於 System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   於 System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   於 System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   於 BarCodeApi.Controllers.GetData13Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData13Controller.cs: 行 49
+2017-07-20 09:34:34.1743 BarCodeApi.Controllers.GetData14Controller.Get Error 儲存資料錯誤 System.InvalidCastException: 指定的轉換無效。
+   於 BarCodeApi.Controllers.GetData14Controller.Get(GetParam md) 於 D:\Me.Document\Github\C601614_ChaominTradingBarCode\BarCodeApi\Controllers\Api\GetData14Controller.cs: 行 71

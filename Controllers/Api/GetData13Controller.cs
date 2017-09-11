@@ -84,7 +84,7 @@ namespace BarCodeApi.Controllers
             /// <summary>
             /// 產品_編號
             /// </summary>
-            public int Key04 { get; set; }
+            public string Key04 { get; set; }
         }
         public class ReturnInfo
         {

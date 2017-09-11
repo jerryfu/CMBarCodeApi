@@ -101,7 +101,7 @@ namespace BarCodeApi.Controllers
             /// <summary>
             /// 產品_編號
             /// </summary>
-            public int Key04 { get; set; }
+            public string Key04 { get; set; }
             /// <summary>
             /// 產品分類_備註(是否有值)(1:有 / 2:無  /3:不判斷)
             /// </summary>

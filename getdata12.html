@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <label>Test Getdata01</label><br />
+    <input type="text" id="Key01" />
+    <input type="text" id="Key02" />
+    <input type="text" id="Key03" />
+    <input type="text" id="Key04" />
+    <button id="btnGetData">Click GetData</button><br />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script>
+
+        $('#btnGetData').click(function () {
+            var obj = {
+                Key01: $('#Key01').val(),
+                Key02: $('#Key02').val(),
+                Key03: $('#Key03').val(),
+                Key04: $('#Key04').val(),
+            }
+
+            console.log('param', obj);
+
+            $.get("./api/GetData12", obj, function (data) {
+                console.log('result', data)
+            });
+        })
+
+    </script>
+</body>
+</html>

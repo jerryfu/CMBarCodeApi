@@ -30,7 +30,7 @@ namespace BarCodeApi.Controllers
                 var Key01 = md.Key01;
                 var Key02 = md.Key02;
                 var Key03 = md.Key03;
-                var Key04 = md.Key04;
+                var Key04 = md.Key04 ?? (object)DBNull.Value;
                 var Key05 = md.Key05;
                 var Key06 = md.Key06 ?? "";
 

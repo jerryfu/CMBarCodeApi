@@ -128,9 +128,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="getdata12.html" />
     <Content Include="Global.asax" />
-    <None Include="index2.html" />
-    <None Include="index.html" />
+    <None Include="putdata01.html" />
+    <None Include="get01.html" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

@@ -1,0 +1,10 @@
+2017-09-12 10:33:58.7534 BarCodeApi.Controllers.GetData12Controller.Get Info 戈IP:::1 把计:{"Key01":1,"Key02":"2017-09-11T00:00:00","Key03":0,"Key04":null}
+2017-09-12 10:34:33.4868 BarCodeApi.Controllers.GetData12Controller.Get Info 戈IP:::1 把计:{"Key01":1,"Key02":"2017-08-11T00:00:00","Key03":0,"Key04":null}
+2017-09-12 10:34:35.4122 BarCodeApi.Controllers.GetData12Controller.Get Info 戈IP:::1 把计:{"Key01":1,"Key02":"2017-08-11T00:00:00","Key03":0,"Key04":null}
+2017-09-12 10:34:46.4416 BarCodeApi.Controllers.GetData12Controller.Get Info 戈IP:::1 把计:{"Key01":1,"Key02":"2017-08-29T00:00:00","Key03":0,"Key04":null}
+2017-09-12 10:35:06.9647 BarCodeApi.Controllers.GetData12Controller.Get Info 戈IP:::1 把计:{"Key01":1,"Key02":"2017-09-12T00:00:00","Key03":0,"Key04":null}
+2017-09-12 10:38:16.9813 BarCodeApi.Controllers.GetData12Controller.Get Info 戈IP:::1 把计:{"Key01":1,"Key02":"2017-09-12T00:00:00","Key03":0,"Key04":null}
+2017-09-12 10:39:32.4314 BarCodeApi.Controllers.GetData12Controller.Get Info 戈IP:::1 把计:{"Key01":1,"Key02":"2017-09-12T00:00:00","Key03":0,"Key04":null}
+2017-09-12 10:39:50.6563 BarCodeApi.Controllers.GetData12Controller.Get Info 戈IP:::1 把计:{"Key01":1,"Key02":"2017-09-12T00:00:00","Key03":0,"Key04":"フ"}
+2017-09-12 10:40:21.3162 BarCodeApi.Controllers.GetData12Controller.Get Info 戈IP:::1 把计:{"Key01":1,"Key02":"2017-09-12T00:00:00","Key03":0,"Key04":"フ"}
+2017-09-12 10:42:27.2425 BarCodeApi.Controllers.GetData12Controller.Get Info 戈IP:::1 把计:{"Key01":1,"Key02":"2017-09-12T00:00:00","Key03":0,"Key04":"フ"}

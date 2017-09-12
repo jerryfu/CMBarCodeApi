@@ -54,49 +54,7 @@ namespace BarCodeApi
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_資料記錄_PUT", p01Parameter, p02Parameter, p03Parameter, p04Parameter, p05Parameter, returnValue01);
         }
     
-        public virtual int usp_盤點_取得資料11(Nullable<int> p01, Nullable<System.DateTime> p02, Nullable<int> p03, Nullable<int> p04)
-        {
-            var p01Parameter = p01.HasValue ?
-                new ObjectParameter("P01", p01) :
-                new ObjectParameter("P01", typeof(int));
-    
-            var p02Parameter = p02.HasValue ?
-                new ObjectParameter("P02", p02) :
-                new ObjectParameter("P02", typeof(System.DateTime));
-    
-            var p03Parameter = p03.HasValue ?
-                new ObjectParameter("P03", p03) :
-                new ObjectParameter("P03", typeof(int));
-    
-            var p04Parameter = p04.HasValue ?
-                new ObjectParameter("P04", p04) :
-                new ObjectParameter("P04", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_取得資料11", p01Parameter, p02Parameter, p03Parameter, p04Parameter);
-        }
-    
-        public virtual int usp_盤點_取得資料12(Nullable<int> p01, Nullable<System.DateTime> p02, Nullable<int> p03, Nullable<int> p04)
-        {
-            var p01Parameter = p01.HasValue ?
-                new ObjectParameter("P01", p01) :
-                new ObjectParameter("P01", typeof(int));
-    
-            var p02Parameter = p02.HasValue ?
-                new ObjectParameter("P02", p02) :
-                new ObjectParameter("P02", typeof(System.DateTime));
-    
-            var p03Parameter = p03.HasValue ?
-                new ObjectParameter("P03", p03) :
-                new ObjectParameter("P03", typeof(int));
-    
-            var p04Parameter = p04.HasValue ?
-                new ObjectParameter("P04", p04) :
-                new ObjectParameter("P04", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_取得資料12", p01Parameter, p02Parameter, p03Parameter, p04Parameter);
-        }
-    
-        public virtual int usp_盤點_取得資料13(Nullable<int> p01, Nullable<System.DateTime> p02, string p03, Nullable<int> p04)
+        public virtual int usp_盤點_取得資料11(Nullable<int> p01, Nullable<System.DateTime> p02, string p03, string p04)
         {
             var p01Parameter = p01.HasValue ?
                 new ObjectParameter("P01", p01) :
@@ -110,14 +68,56 @@ namespace BarCodeApi
                 new ObjectParameter("P03", p03) :
                 new ObjectParameter("P03", typeof(string));
     
-            var p04Parameter = p04.HasValue ?
+            var p04Parameter = p04 != null ?
                 new ObjectParameter("P04", p04) :
-                new ObjectParameter("P04", typeof(int));
+                new ObjectParameter("P04", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_取得資料11", p01Parameter, p02Parameter, p03Parameter, p04Parameter);
+        }
+    
+        public virtual int usp_盤點_取得資料12(Nullable<int> p01, Nullable<System.DateTime> p02, Nullable<int> p03, string p04)
+        {
+            var p01Parameter = p01.HasValue ?
+                new ObjectParameter("P01", p01) :
+                new ObjectParameter("P01", typeof(int));
+    
+            var p02Parameter = p02.HasValue ?
+                new ObjectParameter("P02", p02) :
+                new ObjectParameter("P02", typeof(System.DateTime));
+    
+            var p03Parameter = p03.HasValue ?
+                new ObjectParameter("P03", p03) :
+                new ObjectParameter("P03", typeof(int));
+    
+            var p04Parameter = p04 != null ?
+                new ObjectParameter("P04", p04) :
+                new ObjectParameter("P04", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_取得資料12", p01Parameter, p02Parameter, p03Parameter, p04Parameter);
+        }
+    
+        public virtual int usp_盤點_取得資料13(Nullable<int> p01, Nullable<System.DateTime> p02, string p03, string p04)
+        {
+            var p01Parameter = p01.HasValue ?
+                new ObjectParameter("P01", p01) :
+                new ObjectParameter("P01", typeof(int));
+    
+            var p02Parameter = p02.HasValue ?
+                new ObjectParameter("P02", p02) :
+                new ObjectParameter("P02", typeof(System.DateTime));
+    
+            var p03Parameter = p03 != null ?
+                new ObjectParameter("P03", p03) :
+                new ObjectParameter("P03", typeof(string));
+    
+            var p04Parameter = p04 != null ?
+                new ObjectParameter("P04", p04) :
+                new ObjectParameter("P04", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_取得資料13", p01Parameter, p02Parameter, p03Parameter, p04Parameter);
         }
     
-        public virtual int usp_盤點_取得資料14(Nullable<int> p01, Nullable<System.DateTime> p02, Nullable<int> p03, Nullable<int> p04, Nullable<int> p05, string p06)
+        public virtual int usp_盤點_取得資料14(Nullable<int> p01, Nullable<System.DateTime> p02, Nullable<int> p03, Nullable<int> p04, Nullable<int> p05, string p06, string p07)
         {
             var p01Parameter = p01.HasValue ?
                 new ObjectParameter("P01", p01) :
@@ -143,7 +143,11 @@ namespace BarCodeApi
                 new ObjectParameter("P06", p06) :
                 new ObjectParameter("P06", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_取得資料14", p01Parameter, p02Parameter, p03Parameter, p04Parameter, p05Parameter, p06Parameter);
+            var p07Parameter = p07 != null ?
+                new ObjectParameter("P07", p07) :
+                new ObjectParameter("P07", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_取得資料14", p01Parameter, p02Parameter, p03Parameter, p04Parameter, p05Parameter, p06Parameter, p07Parameter);
         }
     }
 }

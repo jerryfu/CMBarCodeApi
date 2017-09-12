@@ -30,9 +30,10 @@ namespace BarCodeApi.Controllers
                 var Key01 = md.Key01;
                 var Key02 = md.Key02;
                 var Key03 = md.Key03;
-                var Key04 = md.Key04 ?? (object)DBNull.Value;
+                var Key04 = md.Key04; // (object)DBNull.Value;
                 var Key05 = md.Key05;
                 var Key06 = md.Key06 ?? "";
+                var Key07 = md.Key07 ?? "";
 
                 cmd.Parameters.Add(new SqlParameter("@P01", Key01));
                 cmd.Parameters.Add(new SqlParameter("@P02", Key02));
@@ -40,6 +41,7 @@ namespace BarCodeApi.Controllers
                 cmd.Parameters.Add(new SqlParameter("@P04", Key04));
                 cmd.Parameters.Add(new SqlParameter("@P05", Key05));
                 cmd.Parameters.Add(new SqlParameter("@P06", Key06));
+                cmd.Parameters.Add(new SqlParameter("@P07", Key07));
 
                 conn.Open();
                 var reader = cmd.ExecuteReader();
@@ -95,21 +97,26 @@ namespace BarCodeApi.Controllers
             /// </summary>
             public DateTime Key02 { get; set; }
             /// <summary>
-            /// 訂單明細編號
+            /// 訂單主檔編號 0:全部
             /// </summary>
             public int Key03 { get; set; }
             /// <summary>
-            /// 產品_編號
+            /// 產品_編號 0:全部
             /// </summary>
-            public string Key04 { get; set; }
+            public int Key04 { get; set; }
             /// <summary>
-            /// 產品分類_備註(是否有值)(1:有 / 2:無  /3:不判斷)
+            /// 產品分類_備註(是否有值)(1:有 / 2:無  /0:全部)
             /// </summary>
             public int Key05 { get; set; }
             /// <summary>
             /// 產品分類_備註
             /// </summary>
             public string Key06 { get; set; }
+            /// <summary>
+            /// 產品_名稱
+            /// </summary>
+            public string Key07 { get; set; }
+
         }
         public class ReturnInfo
         {

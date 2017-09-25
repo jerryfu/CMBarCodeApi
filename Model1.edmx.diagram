@@ -4,9 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bfb7218f09444a29820b38c6ea2a4b74" Name="Diagram1">
-        <EntityTypeShape EntityType="ChaominModel.VW_盤點廠商_客戶訂單資料" Width="2.75" PointX="0.75" PointY="0.75" />
-      </Diagram>
+      <Diagram DiagramId="6011f399271f46ac8a6a1b75685a3bb9" Name="Diagram1" />
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

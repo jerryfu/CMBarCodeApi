@@ -27,11 +27,12 @@ namespace BarCodeApi.Controllers
                 var json_query = Newtonsoft.Json.JsonConvert.SerializeObject(md);
                 logger.Info("存放資料，IP:{0}， 參數:{1}。", query_from_ip, json_query);
 
-                foreach (var item in md.data) {
-                    ObjectParameter out_value = new ObjectParameter("returnValue01",typeof(int));
+                foreach (var item in md.data)
+                {
+                    ObjectParameter out_value = new ObjectParameter("returnValue01", typeof(int));
 
                     var i = db.usp_盤點_資料記錄_PUT(
-                        item.Order_SN_Detail, 
+                        item.Order_SN_Detail,
                         item.Product_SN,
                         item.Product_Unit,
                         item.Product_Qty,
@@ -40,8 +41,10 @@ namespace BarCodeApi.Controllers
                     var json_detail = Newtonsoft.Json.JsonConvert.SerializeObject(item);
                     logger.Info("儲存JSON:{0} 回傳值:{1}。", json_detail, out_value.Value);
                 }
+
                 r.Count = md.data.Count;
                 r.ReturnCode = 0;
+
                 return r;
             }
             catch (Exception ex)

@@ -1,0 +1,44 @@
+2017-09-13 16:50:17.3671 BarCodeApi.Controllers.PutData01Controller.Post Error 儲存資料錯誤 System.Data.Entity.Core.MappingException: 指定的結構描述無效。錯誤: 
+Model1.msl(8,6) : 錯誤 2062: 未對 EntityContainer ChaominEntities 中 EntitySet 和 AssociationSet 的執行個體指定對應。
+   於 System.Data.Entity.Core.Mapping.StorageMappingItemCollection.Init(EdmItemCollection edmCollection, StoreItemCollection storeCollection, IEnumerable`1 xmlReaders, IList`1 filePaths, Boolean throwOnError)
+   於 System.Data.Entity.Core.Mapping.StorageMappingItemCollection..ctor(EdmItemCollection edmCollection, StoreItemCollection storeCollection, IEnumerable`1 xmlReaders, IList`1 filePaths)
+   於 System.Data.Entity.Core.Metadata.Edm.MetadataCache.LoadStoreCollection(EdmItemCollection edmItemCollection, MetadataArtifactLoader loader)
+   於 System.Data.Entity.Core.Metadata.Edm.MetadataCache.<>c__DisplayClass5.<>c__DisplayClass7.<GetMetadataWorkspace>b__1()
+   於 System.Lazy`1.CreateValue()
+   於 System.Lazy`1.LazyInitValue()
+   於 System.Lazy`1.get_Value()
+   於 System.Data.Entity.Core.Metadata.Edm.MetadataCache.<>c__DisplayClass5.<>c__DisplayClass7.<GetMetadataWorkspace>b__4()
+   於 System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.LoadAndCheckItemCollection[T](Func`1 itemCollectionLoader)
+   於 System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.<>c__DisplayClass16.<.ctor>b__f()
+   於 System.Lazy`1.CreateValue()
+   於 System.Lazy`1.LazyInitValue()
+   於 System.Lazy`1.get_Value()
+   於 System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.GetItemCollection(DataSpace dataSpace, Boolean required)
+   於 System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.GetItemCollection(DataSpace dataSpace)
+   於 System.Data.Entity.Core.Objects.ObjectContext.InitializeMappingViewCacheFactory(DbContext owner)
+   於 System.Data.Entity.Core.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor, ObjectQueryExecutionPlanFactory objectQueryExecutionPlanFactory, Translator translator, ColumnMapFactory columnMapFactory)
+   於 System.Data.Entity.Internal.InternalConnection.CreateObjectContextFromConnectionModel()
+   於 System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   於 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   於 System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   於 System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   於 BarCodeApi.ChaominEntities.usp_盤點_資料記錄_PUT(Nullable`1 p01, Nullable`1 p02, String p03, Nullable`1 p04, Nullable`1 p05, ObjectParameter returnValue01) 於 D:\330.GitHub\CMBarCodeApi\Model1.Context.cs: 行 54
+   於 BarCodeApi.Controllers.PutData01Controller.Post(PostParam md) 於 D:\330.GitHub\CMBarCodeApi\Controllers\Api\PutData01Controller.cs: 行 33
+2017-09-13 17:19:20.7024 BarCodeApi.Controllers.PutData01Controller.Post Error 儲存資料錯誤 System.Data.Entity.Core.EntityCommandCompilationException: 準備此命令定義時發生錯誤。如需詳細資料，請參閱內部例外狀況。 ---> System.InvalidOperationException: 無法執行函式匯入 'ChaominEntities.usp_盤點_資料記錄_PUT'，因為它並未對應到存放區函式。
+   於 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.GetTargetFunctionMapping(DbFunctionCommandTree functionCommandTree)
+   於 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition..ctor(DbProviderFactory storeProviderFactory, DbCommandTree commandTree, DbInterceptionContext interceptionContext, IDbDependencyResolver resolver, BridgeDataReaderFactory bridgeDataReaderFactory, ColumnMapFactory columnMapFactory)
+   --- 內部例外狀況堆疊追蹤的結尾 ---
+   於 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition..ctor(DbProviderFactory storeProviderFactory, DbCommandTree commandTree, DbInterceptionContext interceptionContext, IDbDependencyResolver resolver, BridgeDataReaderFactory bridgeDataReaderFactory, ColumnMapFactory columnMapFactory)
+   於 System.Data.Entity.Core.EntityClient.EntityCommand.CreateCommandDefinition()
+   於 System.Data.Entity.Core.EntityClient.EntityCommand.TryGetEntityCommandDefinitionFromQueryCache(EntityCommandDefinition& entityCommandDefinition)
+   於 System.Data.Entity.Core.EntityClient.EntityCommand.GetCommandDefinition()
+   於 System.Data.Entity.Core.EntityClient.EntityCommand.InnerPrepare()
+   於 System.Data.Entity.Core.EntityClient.EntityCommand.Prepare()
+   於 System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunctionCommand(EntityCommand entityCommand)
+   於 System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass14.<ExecuteFunction>b__13()
+   於 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   於 System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass14.<ExecuteFunction>b__12()
+   於 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   於 System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   於 BarCodeApi.ChaominEntities.usp_盤點_資料記錄_PUT(Nullable`1 p01, Nullable`1 p02, String p03, Nullable`1 p04, Nullable`1 p05, ObjectParameter returnValue01) 於 D:\330.GitHub\CMBarCodeApi\Model1.Context.cs: 行 53
+   於 BarCodeApi.Controllers.PutData01Controller.Post(PostParam md) 於 D:\330.GitHub\CMBarCodeApi\Controllers\Api\PutData01Controller.cs: 行 33

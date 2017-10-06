@@ -57,6 +57,8 @@ namespace BarCodeApi.Controllers
                     packData.Add(pd);
                 }
 
+                reader.Close();
+                conn.Close();
                 r.Data = packData;
                 r.ReturnCode = 0;
                 return r;

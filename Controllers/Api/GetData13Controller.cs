@@ -32,7 +32,6 @@ namespace BarCodeApi.Controllers
                 var Key03 = md.Key03 ?? "";
                 var Key04 = md.Key04 ?? ""; // (object)DBNull.Value;
 
-
                 cmd.Parameters.Add(new SqlParameter("@P01", Key01));
                 cmd.Parameters.Add(new SqlParameter("@P02", Key02));
                 cmd.Parameters.Add(new SqlParameter("@P03", Key03));
@@ -57,9 +56,10 @@ namespace BarCodeApi.Controllers
                     packData.Add(pd);
                 }
 
+                reader.Close();
+                conn.Close();
+
                 r.Data = packData;
-
-
                 r.ReturnCode = 0;
                 return r;
             }

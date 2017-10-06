@@ -1,0 +1,10 @@
+2017-09-13 16:49:31.0049 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":2,"Product_Unit":"AAA","Product_Qty":0.0,"Product_Qty_New":0.0}]}
+2017-09-13 16:50:38.6115 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":2,"Product_Unit":"AAA","Product_Qty":0.0,"Product_Qty_New":0.0}]}
+2017-09-13 17:00:02.5963 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":2,"Product_Unit":"AAA","Product_Qty":0.0,"Product_Qty_New":0.0}]}
+2017-09-13 17:19:19.9097 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":2,"Product_Unit":"AAA","Product_Qty":0.0,"Product_Qty_New":0.0}]}
+2017-09-13 17:24:05.6176 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":2,"Product_Unit":"AAA","Product_Qty":0.0,"Product_Qty_New":0.0}]}
+2017-09-13 17:24:06.5733 BarCodeApi.Controllers.PutData01Controller.Post Info 纗JSON:{"Order_SN_Detail":1,"Product_SN":2,"Product_Unit":"AAA","Product_Qty":0.0,"Product_Qty_New":0.0} 肚:10
+2017-09-13 17:24:38.1914 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":2,"Product_Unit":"AAA","Product_Qty":0.0,"Product_Qty_New":0.0}]}
+2017-09-13 17:24:38.3786 BarCodeApi.Controllers.PutData01Controller.Post Info 纗JSON:{"Order_SN_Detail":1,"Product_SN":2,"Product_Unit":"AAA","Product_Qty":0.0,"Product_Qty_New":0.0} 肚:11
+2017-09-13 17:34:37.8069 BarCodeApi.Controllers.PutData01Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Detail":1,"Product_SN":2,"Product_Unit":"AAA","Product_Qty":0.0,"Product_Qty_New":0.0}]}
+2017-09-13 17:34:38.7871 BarCodeApi.Controllers.PutData01Controller.Post Info 纗JSON:{"Order_SN_Detail":1,"Product_SN":2,"Product_Unit":"AAA","Product_Qty":0.0,"Product_Qty_New":0.0} 肚:12

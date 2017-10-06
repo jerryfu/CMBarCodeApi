@@ -10,6 +10,7 @@ namespace BarCodeApi.Controllers
     public class BaseApiController : ApiController
     {
         protected ChaominEntities db = new ChaominEntities();
+        
         protected static Logger logger = LogManager.GetCurrentClassLogger();
         protected const int ExceptionCode = 99;
         protected string getUserIP()

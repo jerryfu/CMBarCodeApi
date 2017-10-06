@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <label>Test Putdata01</label><br />
+    Order_SN_Master:<input type="text" id="Order_SN_Master" /><br />
+
+    <button id="btnPutData01">Click PutData01</button>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script>
+        $('#btnPutData01').click(function () {
+
+            var _data = [];
+
+            var get_data = {
+                Order_SN_Detail: parseInt($('#Order_SN_Master').val(), 10)
+            }
+            _data.push(get_data)
+
+            var obj = {
+                data: _data
+            }
+
+            $.post("./api/PutData02",obj, function (data) {
+                alert(data.ReturnCode)
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+2017-10-06 00:01:19.5168 BarCodeApi.Controllers.PutData02Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Master":0}]}
+2017-10-06 00:01:35.4762 BarCodeApi.Controllers.PutData02Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Master":0}]}
+2017-10-06 00:02:19.2319 BarCodeApi.Controllers.PutData02Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Master":0}]}
+2017-10-06 07:27:51.1218 BarCodeApi.Controllers.PutData02Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Master":0}]}
+2017-10-06 07:28:00.2726 BarCodeApi.Controllers.PutData02Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Master":0}]}
+2017-10-06 07:33:54.6029 BarCodeApi.Controllers.PutData02Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Master":0}]}
+2017-10-06 07:34:26.6745 BarCodeApi.Controllers.PutData02Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Master":0}]}
+2017-10-06 07:42:55.1172 BarCodeApi.Controllers.PutData02Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Master":0}]}
+2017-10-06 07:49:12.7074 BarCodeApi.Controllers.PutData02Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Master":0}]}
+2017-10-06 08:00:33.8340 BarCodeApi.Controllers.PutData02Controller.Post Info 戈IP:::1 把计:{"data":[{"Order_SN_Master":0}]}
+2017-10-06 08:00:38.0670 BarCodeApi.Controllers.PutData02Controller.Post Info 纗JSON:{"Order_SN_Master":0} 肚:1

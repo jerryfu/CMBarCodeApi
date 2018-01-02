@@ -28,13 +28,17 @@ namespace BarCodeApi
         }
     
     
-        public virtual int usp_盤點_最後盤點時間_PUT(Nullable<int> p01, ObjectParameter returnValue01)
+        public virtual int usp_盤點_最後盤點時間_PUT(Nullable<int> p01, Nullable<int> p02, ObjectParameter returnValue01)
         {
             var p01Parameter = p01.HasValue ?
                 new ObjectParameter("P01", p01) :
                 new ObjectParameter("P01", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_最後盤點時間_PUT", p01Parameter, returnValue01);
+            var p02Parameter = p02.HasValue ?
+                new ObjectParameter("P02", p02) :
+                new ObjectParameter("P02", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_盤點_最後盤點時間_PUT", p01Parameter, p02Parameter, returnValue01);
         }
     
         public virtual int usp_盤點_資料記錄_PUT(Nullable<int> p01, Nullable<int> p02, string p03, Nullable<float> p04, Nullable<float> p05, ObjectParameter returnValue01)

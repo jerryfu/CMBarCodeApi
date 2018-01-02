@@ -31,7 +31,7 @@ namespace BarCodeApi.Controllers
                 {
                     ObjectParameter out_value = new ObjectParameter("returnValue01", typeof(int));
 
-                    var i = db.usp_盤點_最後盤點時間_PUT(item.Order_SN_Master, out_value);
+                    var i = db.usp_盤點_最後盤點時間_PUT(md.Flag, item.OrderNumber, out_value);
                     var json_detail = Newtonsoft.Json.JsonConvert.SerializeObject(item);
                     logger.Info("儲存JSON:{0} 回傳值:{1}。", json_detail, out_value.Value);
                 }
@@ -49,11 +49,13 @@ namespace BarCodeApi.Controllers
         {
             [Required]
             public PostModal[] data { get; set; }
+            public int Flag { get; set; }
         }
         public class PostModal
         {
             //[Required]
-            public int Order_SN_Master { get; set; }
+            public int OrderNumber { get; set; }
+
         }
         public class ReturnInfo
         {

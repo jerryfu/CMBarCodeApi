@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
-using System.Data.Entity.Core.Objects;
 using System.Data.SqlClient;
 using System.Web.Http;
 
@@ -34,6 +32,7 @@ namespace BarCodeApi.Controllers
                 var Key05 = md.Key05;
                 var Key06 = md.Key06 ?? "";
                 var Key07 = md.Key07 ?? "";
+                var Key08 = md.Key08;
 
                 cmd.Parameters.Add(new SqlParameter("@P01", Key01));
                 cmd.Parameters.Add(new SqlParameter("@P02", Key02));
@@ -42,6 +41,7 @@ namespace BarCodeApi.Controllers
                 cmd.Parameters.Add(new SqlParameter("@P05", Key05));
                 cmd.Parameters.Add(new SqlParameter("@P06", Key06));
                 cmd.Parameters.Add(new SqlParameter("@P07", Key07));
+                cmd.Parameters.Add(new SqlParameter("@P08", Key08));
 
                 conn.Open();
                 var reader = cmd.ExecuteReader();
@@ -119,7 +119,10 @@ namespace BarCodeApi.Controllers
             /// 產品_名稱
             /// </summary>
             public string Key07 { get; set; }
-
+            /// <summary>
+            /// 提早印	0: 全部，1:提早印，2:非提早印
+            /// </summary>
+            public string Key08 { get; set; }
         }
         public class ReturnInfo
         {

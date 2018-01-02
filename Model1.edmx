@@ -7,6 +7,7 @@
     <Schema Namespace="ChaominModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="usp_盤點_最後盤點時間_PUT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="P01" Type="int" Mode="In" />
+          <Parameter Name="P02" Type="int" Mode="In" />
           <Parameter Name="ReturnValue01" Type="int" Mode="InOut" />
         </Function>
         <Function Name="usp_盤點_資料記錄_PUT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -25,6 +26,7 @@
         <EntityContainer Name="ChaominEntities" annotation:LazyLoadingEnabled="true">
           <FunctionImport Name="usp_盤點_最後盤點時間_PUT">
             <Parameter Name="P01" Mode="In" Type="Int32" />
+            <Parameter Name="P02" Mode="In" Type="Int32" />
             <Parameter Name="ReturnValue01" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="usp_盤點_資料記錄_PUT">

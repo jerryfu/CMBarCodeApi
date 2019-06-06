@@ -21,6 +21,7 @@ namespace BarCodeApi.Controllers
         public ReturnInfo Post([FromBody]PostParam md)
         {
             ReturnInfo r = new ReturnInfo();
+            PostModal get_item = null;
             try
             {
                 string query_from_ip = getUserIP();
@@ -29,18 +30,22 @@ namespace BarCodeApi.Controllers
 
                 foreach (var item in md.data)
                 {
+                    get_item = item;
                     ObjectParameter out_value = new ObjectParameter("returnValue01", typeof(int));
 
                     var i = db.usp_盤點_最後盤點時間_PUT(md.Flag, item.OrderNumber, out_value);
                     var json_detail = Newtonsoft.Json.JsonConvert.SerializeObject(item);
                     logger.Info("儲存JSON:{0} 回傳值:{1}。", json_detail, out_value.Value);
                 }
+                r.Count = md.data.Length;
                 r.ReturnCode = 0;
                 return r;
             }
             catch (Exception ex)
             {
-                logger.Error(ex, "儲存資料錯誤");
+                logger.Error("訊息:{0} 錯誤項:{1} 參數:{2}", ex.Message,
+                    Newtonsoft.Json.JsonConvert.SerializeObject(get_item),
+                    Newtonsoft.Json.JsonConvert.SerializeObject(md));
                 r.ReturnCode = ExceptionCode;
                 return r;
             }

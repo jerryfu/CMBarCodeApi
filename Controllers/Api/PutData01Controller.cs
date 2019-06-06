@@ -53,6 +53,9 @@ namespace BarCodeApi.Controllers
                 r.ReturnCode = ExceptionCode;
                 return r;
             }
+            finally {
+                db.Dispose();
+            }
         }
         public class PostParam
         {
